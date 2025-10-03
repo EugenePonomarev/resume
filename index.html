@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Evgenii Ponomarev — Android Engineer / Старший Android‑разработчик</title>
-  <meta name="description" content="Android engineer with expertise in Kotlin, Jetpack Compose, CameraX, OpenCV/ML Kit; bilingual résumé (EN/RU)." />
+  <meta name="description" content="Android engineer with expertise in Kotlin, Jetpack Compose, CameraX, OpenCV/ML Kit; bilingual resume (EN/RU)." />
   <meta name="robots" content="index,follow" />
   <!-- OpenGraph / Twitter -->
   <meta property="og:title" content="Evgenii Ponomarev — Android Engineer" />
-  <meta property="og:description" content="Android engineer · Kotlin · Jetpack Compose · CameraX · OpenCV/ML Kit · Bilingual résumé (EN/RU)." />
+  <meta property="og:description" content="Android engineer · Kotlin · Jetpack Compose · CameraX · OpenCV/ML Kit · Bilingual resume (EN/RU)." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -156,8 +156,25 @@
 
         <section>
           <h2>Projects</h2>
+            <div class="item">
+              <h3>Document Scanner</h3>
+                <ul>
+                  <li>Live edge detection (OpenCV) with temporal stabilization and ROI acceleration.</li>
+                  <li>Perspective warp, auto-capture on stable frames, duplicate protection (aHash + geometric checks).</li>
+                  <li>Page stack: reorder/rotate/delete; export to PDF (A4 portrait/landscape, DPI, margins) or multiple JPEGs.</li>
+                  <li>Fully offline processing, EN localization; optional ML Kit Text Recognition (planned).</li>
+                </ul>
+              <div class="meta"><a href="https://github.com/EugenePonomarev/DocScanner" target="_blank" rel="noopener">GitHub</a> · Kotlin, Compose, CameraX, OpenCV</div>
+            </div>
           <div class="item">
             <h3>QR Detector</h3>
+              <ul>
+                <li>Real-time QR scanning with CameraX + ML Kit (Barcode Scanning, QR only).</li>
+                <li>Rotated polygon overlay from ML Kit corner points; falls back to an axis-aligned rectangle when corner points are unavailable.</li>
+                <li>Bottom-sheet history of unique scans for the entire session; each new QR is logged to Logcat once.</li>
+                <li>Accurate Preview ↔ Analysis and orientation (portrait/landscape) alignment thanks to ResolutionSelector + ViewPort.</li>
+                <li>On-device processing; no network calls.</li>
+              </ul>
             <div class="meta"><a href="https://github.com/EugenePonomarev/QrDetector" target="_blank" rel="noopener">GitHub</a> · Kotlin, Compose, CameraX, ML Kit</div>
           </div>
           <div class="item">
@@ -248,10 +265,23 @@
           <h2>Проекты</h2>
           <div class="item">
             <h3>Document Scanner</h3>
+                <ul>
+                  <li>Живое распознавание границ (OpenCV) с временной стабилизацией и ускорением по ROI.</li>
+                  <li>Перспективное выравнивание, авто‑съёмка при стабильном кадре, защита от дублей (aHash + геометрические проверки).</li>
+                  <li>Стек страниц: перестановка/поворот/удаление; экспорт в PDF (A4 портр./альбом., DPI, поля) или в несколько JPEG.</li>
+                  <li>Полностью офлайн‑обработка, локализация EN; опционально ML Kit Text Recognition (в планах).</li>
+                </ul>
             <div class="meta"><a href="https://github.com/EugenePonomarev/DocScanner" target="_blank" rel="noopener">GitHub</a> · Kotlin, Compose, CameraX, OpenCV</div>
           </div>
           <div class="item">
             <h3>QR Detector</h3>
+            <ul>
+              <li>Сканирование QR в реальном времени на CameraX + ML Kit (Barcode Scanning, только QR).</li>
+              <li>Повернутый полигон‑оверлей из corner points ML Kit; при их отсутствии — прямоугольник по осям.</li>
+              <li>История уникальных сканов в нижнем листе за всю сессию; каждый новый QR логируется в Logcat один раз.</li>
+              <li>Корректное соответствие Preview ↔ Analysis и ориентаций (портрет/ландшафт) благодаря ResolutionSelector + ViewPort.</li>
+              <li>Обработка на устройстве, без сетевых вызовов.</li>
+              </ul>
             <div class="meta"><a href="https://github.com/EugenePonomarev/QrDetector" target="_blank" rel="noopener">GitHub</a> · Kotlin, Compose, CameraX, ML Kit</div>
           </div>
           <div class="item">
