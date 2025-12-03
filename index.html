@@ -1,16 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': 
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TJRSFCBG');</script>
-  <!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1JMGTQSNK6"></script>
-  
 <!-- railway and umami tag -->
   <script async
         src="https://umami-production-3948.up.railway.app/script.js"
@@ -130,11 +120,11 @@
           <div class="chip">Blender / Unity</div>
         </div>
         <div class="actions">
-          <a class="btn primary" href="#" onclick="window.print()">Download / Print PDF</a>
-          <a class="btn" href="mailto:EugenePonomarevDev@gmail.com">EugenePonomarevDev@gmail.com</a>
-          <a class="btn" href="https://www.linkedin.com/in/ponomareveugene" target="_blank" rel="noopener" title="Open LinkedIn profile in a new tab" aria-label="Open LinkedIn profile">LinkedIn</a>
-          <a class="btn" href="https://t.me/EugenePonomarev" target="_blank" rel="noopener" title="Open Telegram">@EugenePonomarev</a>
-          <a class="btn" href="tel:+79877448089">+7 987 744 80 89</a>
+          <a class="btn primary" href="#" onclick="trackEvent('print_pdf'); window.print();">Download / Print PDF</a>
+          <a class="btn" href="mailto:EugenePonomarevDev@gmail.com" onclick="trackEvent('click_email');">EugenePonomarevDev@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/ponomareveugene" target="_blank" rel="noopener" title="Open LinkedIn profile in a new tab" aria-label="Open LinkedIn profile" onclick="trackEvent('click_linkedin');">LinkedIn</a>
+          <a class="btn" href="https://t.me/EugenePonomarev" target="_blank" rel="noopener" title="Open Telegram" onclick="trackEvent('click_telegram');">@EugenePonomarev</a>
+          <a class="btn" href="tel:+79877448089" onclick="trackEvent('click_phone');"> +7 987 744 80 89</a>
         </div>
         <div class="langswitch">
           <button class="langbtn active" data-lang="en" aria-label="Switch to English">EN</button>
@@ -362,17 +352,26 @@
     </footer>
   </div>
 
-  <script>
-        // Language switcher
-    const buttons = document.querySelectorAll('.langbtn');
-    buttons.forEach(b=>b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false'));
-    const blocks = { en: document.getElementById('lang-en'), ru: document.getElementById('lang-ru') };
-    function setLang(lang){
-      for (const k in blocks){ blocks[k].classList.toggle('active', k===lang); }
-      buttons.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
-      document.documentElement.setAttribute('lang', lang);
+<script>
+  function trackEvent(name, data) {
+    if (window.umami && typeof window.umami.track === 'function') {
+      window.umami.track(name, data || {});
     }
-    buttons.forEach(b=>b.addEventListener('click', ()=> setLang(b.dataset.lang)));
-  </script>
+  }
+
+  // Language switcher
+  const buttons = document.querySelectorAll('.langbtn');
+  buttons.forEach(b=>b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false'));
+  const blocks = { en: document.getElementById('lang-en'), ru: document.getElementById('lang-ru') };
+  function setLang(lang){
+    for (const k in blocks){ blocks[k].classList.toggle('active', k===lang); }
+    buttons.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+    document.documentElement.setAttribute('lang', lang);
+
+    // 🔹 трекаем смену языка
+    trackEvent('lang_switch', { lang: lang });
+  }
+  buttons.forEach(b=>b.addEventListener('click', ()=> setLang(b.dataset.lang)));
+</script>
 </body>
 </html>
