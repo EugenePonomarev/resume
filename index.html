@@ -76,12 +76,110 @@
     .lang{display:none}
     .lang.active{display:block}
 
-    /* Print-friendly: print the currently visible language only */
+    /* Print-friendly: optimized layout for Download / Print PDF */
     @media print {
-      body{background:#fff;color:#000}
-      section{break-inside:avoid}
-      .btn,.actions,.chips,.langswitch{display:none}
-      a{color:#000;text-decoration:none}
+      @page { size: A4; margin: 12mm; }
+
+      html, body { height: auto; }
+      body{
+        background:#fff;
+        color:#000;
+        font-size:12px;
+        line-height:1.35;
+      }
+
+      .wrap{
+        max-width:none;
+        margin:0;
+        padding:0;
+      }
+
+      header{
+        display:block;
+        gap:0;
+        margin-bottom:10px;
+        break-after:avoid-page;
+        page-break-after:avoid;
+      }
+
+      h1{
+        font-size:22px;
+        line-height:1.15;
+        margin-bottom:4px;
+      }
+
+      .subtitle{
+        margin-top:4px;
+        font-size:13px;
+      }
+
+      main{
+        display:block !important;
+        margin-top:12px;
+      }
+
+      section{
+        background:#fff;
+        border:0;
+        border-radius:0;
+        padding:0;
+        margin-bottom:12px;
+        break-inside:auto;
+        page-break-inside:auto;
+      }
+
+      section h2{
+        font-size:16px;
+        margin:0 0 8px 0;
+        break-after:avoid-page;
+        page-break-after:avoid;
+      }
+
+      .item{
+        margin-bottom:10px;
+        break-inside:avoid;
+        page-break-inside:avoid;
+      }
+
+      .item h3{
+        font-size:14px;
+      }
+
+      .meta{
+        font-size:11px;
+      }
+
+      ul{
+        margin:0;
+        padding-left:18px;
+      }
+
+      li{
+        margin-bottom:3px;
+      }
+
+      .skills{
+        gap:6px;
+      }
+
+      .pill{
+        padding:4px 8px;
+        font-size:11px;
+      }
+
+      .btn,.actions,.chips,.langswitch{
+        display:none;
+      }
+
+      a{
+        color:#000;
+        text-decoration:none;
+      }
+
+      footer{
+        margin-top:10px;
+        font-size:11px;
+      }
     }
       .langbtn:hover{filter:brightness(1.1)}
     .langbtn:focus-visible{outline:2px solid rgba(255,255,255,.6);outline-offset:2px}
@@ -97,7 +195,7 @@
     "jobTitle":"Android Engineer",
     "email":"EugenePonomarevDev@gmail.com",
     "sameAs":["https://www.linkedin.com/in/ponomareveugene"],
-    "worksFor":{"@type":"Organization","name":"UMI Technologies Corp"},
+    "worksFor":{"@type":"Organization","name":"INNOVATIONS OF BUSINESS"},
     "knowsAbout":["Android","Kotlin","Jetpack Compose","CameraX","OpenCV","ML Kit","Computer Graphics","Unity","Blender"]
   }
   </script>
@@ -139,8 +237,20 @@
         <section>
           <h2>Experience</h2>
           <div class="item">
+            <h3>Senior Android Developer — INNOVATIONS OF BUSINESS</h3>
+            <div class="meta">Nov 2025 — Present</div>
+            <ul>
+              <li>Develop and maintain an Android mobile banking application for retail customers as part of a commercial banking product.</li>
+              <li>Deliver new product features and enhance existing banking flows, including customer products, transfers, payments, transaction history, templates, quick actions, and currency exchange operations.</li>
+              <li>Shape user flows in line with business rules, usability expectations, and the reliability standards required for banking software.</li>
+              <li>Improve application stability, resolve defects, and optimize screen behavior, UI state handling, and network communication.</li>
+              <li>Contribute to application architecture improvements, refactor complex code areas, and raise the quality of engineering solutions.</li>
+              <li>Work closely with analysts, QA engineers, and other developers across the full feature delivery cycle.</li>
+            </ul>
+          </div>
+          <div class="item">
             <h3>Senior Android Developer — UMI Technologies Corp</h3>
-            <div class="meta">Sep 2023 — Present · Kotlin, Jetpack Compose, Paging 3, Koin, Retrofit, Firebase</div>
+            <div class="meta">Sep 2023 — Oct 2025 · Kotlin, Jetpack Compose, Paging 3, Koin, Retrofit, Firebase</div>
             <ul>
               <li>Implemented core modules for credit and order management: Loan Calculator, PDL flow, Loan Protection, Orders/Filters.</li>
               <li>Designed complex ViewModel business logic with Flow/StateFlow; robust state handling across config changes.</li>
@@ -234,7 +344,7 @@
             <li>Bachelor of Public and Municipal Administration — NNSU (2014)</li>
             <li>Diploma in Information Processing & Control Systems — Kirov Agricultural College (2010)</li>
             <li>Android developer — GLOBUS IT (2019); Java Tutorial — SoloLearn (2018);</li>
-            <li>IEEE Member</li>
+            <li>Senior IEEE Member</li>
           </ul>
         </section>
       </main>
@@ -246,8 +356,20 @@
         <section>
           <h2>Опыт работы</h2>
           <div class="item">
+            <h3>Senior Android Developer — ИННОВАЦИИ БИЗНЕСА</h3>
+            <div class="meta">Ноябрь 2025 — по наст. время</div>
+            <ul>
+              <li>Разрабатываю и поддерживаю Android-приложение мобильного банка для физических лиц в рамках коммерческого банковского продукта.</li>
+              <li>Реализую новые продуктовые возможности и дорабатываю существующие банковские сценарии, включая продукты клиента, переводы, платежи, историю операций, шаблоны, быстрые действия и валютообменные операции.</li>
+              <li>Прорабатываю пользовательские сценарии с учетом бизнес-правил, требований к удобству использования и стандартов надежности, необходимых для банковского программного обеспечения.</li>
+              <li>Улучшаю стабильность приложения, устраняю дефекты и оптимизирую поведение экранов, обработку состояний интерфейса и сетевое взаимодействие.</li>
+              <li>Участвую в развитии архитектуры приложения, рефакторинге сложных участков кода и повышении качества инженерных решений.</li>
+              <li>Плотно взаимодействую с аналитиками, QA-инженерами и другими разработчиками на всех этапах поставки функциональности.</li>
+            </ul>
+          </div>
+          <div class="item">
             <h3>Senior Android Developer — UMI Technologies Corp</h3>
-            <div class="meta">Сентябрь 2023 — по наст. время · Kotlin, Jetpack Compose, Paging 3, Koin, Retrofit, Firebase</div>
+            <div class="meta">Сентябрь 2023 — Октябрь 2025 · Kotlin, Jetpack Compose, Paging 3, Koin, Retrofit, Firebase</div>
             <ul>
               <li>Реализовал ключевые модули: Loan Calculator, PDL flow, Loan Protection, Orders/Filters.</li>
               <li>Проектировал сложную бизнес‑логику во ViewModel с Flow/StateFlow; надёжное управление состоянием.</li>
@@ -341,14 +463,14 @@
             <li>Бакалавр гос. и муниципального управления — ННГУ (2014)</li>
             <li>Диплом по АСОИУ — Кировский сельскохозяйственный техникум (2010)</li>
             <li>Android‑разработчик — GLOBUS IT (2019); Java Tutorial — SoloLearn (2018);</li>
-            <li>IEEE Member</li>
+            <li>Senior IEEE Member</li>
           </ul>
         </section>
       </main>
     </div>
 
     <footer>
-      © 2025 Evgenii Ponomarev
+      © 2026 Evgenii Ponomarev
     </footer>
   </div>
 
