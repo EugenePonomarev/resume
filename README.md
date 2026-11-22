@@ -47,7 +47,6 @@ An open-source **Kotlin Multiplatform QR code engine** for **Android, iOS, and W
 | --- | --- |
 | [Document Scanner](https://github.com/EugenePonomarev/DocScanner) | Offline document scanning, perspective correction, and PDF export using CameraX and OpenCV. |
 | [QR Detector](https://github.com/EugenePonomarev/QrDetector) | Real-time QR scanning using CameraX and ML Kit. |
-| [Weather apps](https://github.com/EugenePonomarev/WeatherCompose) | Android weather app experiments with Jetpack Compose and different UI architectures. |
 
 ## Research & publications
 
